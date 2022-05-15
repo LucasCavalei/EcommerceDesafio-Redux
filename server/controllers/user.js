@@ -1,8 +1,9 @@
 const User = require("../models/User");
+import { Request, Response } from "express";
 const bcrypt = require("bcrypt");
 const { createToken } = require("../isAuth.js");
 
-module.exports.signup = async (req, res) => {
+module.exports.signup = async (req: Request, res: Response) => {
   const { name, email, password } = req.body;
   if (!email || !password) {
     res
